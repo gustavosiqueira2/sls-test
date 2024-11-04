@@ -10,8 +10,10 @@ import AgendamentoService from './AgendamentoService'
 export default class AgendamentoController {
   private agendamentoService: AgendamentoService
 
-  constructor(@inject(AgendamentoService) myService: AgendamentoService) {
-    this.agendamentoService = myService
+  constructor(
+    @inject(AgendamentoService) AgendamentoService: AgendamentoService
+  ) {
+    this.agendamentoService = AgendamentoService
   }
 
   @Required<AgendamentoDTO>(['medico_id', 'paciente_nome', 'data_horario'])
