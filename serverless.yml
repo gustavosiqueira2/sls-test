@@ -1,0 +1,26 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: gustavosiqueira
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: teste-tecnico-sls
+
+service: agendamento-service
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+functions:
+  createAgendamento:
+    handler: src/handler.createAgendamento
+    events:
+      - http:
+          path: agendamentos
+          method: post
+
+custom:
+  serverless-offline:
+    httpPort: 3000
