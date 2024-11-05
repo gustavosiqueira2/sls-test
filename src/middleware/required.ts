@@ -1,3 +1,5 @@
+import { HTTP_STATUS_CODE } from 'src/constants/HTTP_STATUS_CODE'
+
 export function Required<T>(fields: (keyof T)[]) {
   return function (_: any, __: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value
@@ -8,7 +10,7 @@ export function Required<T>(fields: (keyof T)[]) {
       for (const field of fields) {
         if (!body[field]) {
           return {
-            statusCode: 400,
+            statusCode: HTTP_STATUS_CODE['Bad Request'],
             body: JSON.stringify({
               message: `Missing required field: ${String(field)}`
             })

@@ -1,4 +1,6 @@
+import { APIGatewayProxyResult } from 'aws-lambda'
 import { inject, injectable } from 'inversify'
+import { HTTP_STATUS_CODE } from 'src/constants/HTTP_STATUS_CODE'
 
 import AgendaService from './AgendaService'
 
@@ -10,18 +12,18 @@ export default class AgendaController {
     this.AgendaService = AgendaService
   }
 
-  public async getAgenda() {
+  public async getAgenda(): Promise<APIGatewayProxyResult> {
     try {
       const agenda = await this.AgendaService.getAgenda()
 
       return {
-        statusCode: 200,
+        statusCode: HTTP_STATUS_CODE.OK,
         body: JSON.stringify(agenda)
       }
     } catch (error) {
       console.error('Error creating agendamento:', error)
       return {
-        statusCode: 500,
+        statusCode: HTTP_STATUS_CODE['Internal Server Error'],
         body: JSON.stringify({ message: 'Internal Server Error' })
       }
     }
