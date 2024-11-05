@@ -8,7 +8,7 @@
 
 ## 🔎 Overview
 
-Criado por [Gustavo Siqueira](#%EF%B8%8F-contributing), este projeto foi feito para criar `agendamentos` e receber uma lista de `agendas` baseando em mocks e uma arquitetura estrutura com DI
+Criado por [Gustavo Siqueira](#%EF%B8%8F-contributing), este projeto foi feito para criar `agendamentos` e receber uma lista de `agendas` baseando em mocks feito em cima de uma arquitetura DI utilizando inversify
 
 você pode me encontrar em:
 
