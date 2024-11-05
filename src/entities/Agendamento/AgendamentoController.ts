@@ -15,14 +15,14 @@ import AgendamentoService from './AgendamentoService'
 @injectable()
 export default class AgendamentoController {
   private AgendaService: AgendaService
-  private agendamentoService: AgendamentoService
+  private AgendamentoService: AgendamentoService
 
   constructor(
     @inject(AgendaService) AgendaService: AgendaService,
     @inject(AgendamentoService) AgendamentoService: AgendamentoService
   ) {
     this.AgendaService = AgendaService
-    this.agendamentoService = AgendamentoService
+    this.AgendamentoService = AgendamentoService
   }
 
   @Required<AgendamentoDTO>(['medico_id', 'paciente_nome', 'data_horario'])
@@ -40,7 +40,7 @@ export default class AgendamentoController {
         })
       }
 
-      const isAvailable = await this.agendamentoService.getAvailableTime(
+      const isAvailable = await this.AgendamentoService.getAvailableTime(
         doctorAgenda.horarios_disponiveis,
         body.data_horario
       )
@@ -52,7 +52,7 @@ export default class AgendamentoController {
       }
 
       const createdAgendamento =
-        await this.agendamentoService.createAgendamento(body)
+        await this.AgendamentoService.createAgendamento(body)
 
       return responseJson(HTTP_STATUS_CODE.Created, {
         message: 'Agendamento realizado com sucesso',
