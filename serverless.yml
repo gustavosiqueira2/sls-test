@@ -14,17 +14,17 @@ provider:
   region: us-east-1
 
 functions:
-  getAgenda:
-    handler: src/handler.getAgenda
+  getAgendas:
+    handler: src/handler.getAgendas
     events:
       - http:
-          path: agenda
+          path: agendas
           method: get
   createAgendamento:
     handler: src/handler.createAgendamento
     events:
       - http:
-          path: agendamentos
+          path: agendamento
           method: post
 
 custom:

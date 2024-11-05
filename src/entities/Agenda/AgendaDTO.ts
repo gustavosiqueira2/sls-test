@@ -1,8 +1,13 @@
-export interface Agenda {
-  medicos: Medico[]
+export interface AgendaServiceInterface {
+  getAgenda: () => Promise<Agenda>
+  getDoctorAgenda: (id: number) => Promise<DoctorAgenda | undefined>
 }
 
-type Medico = {
+export interface Agenda {
+  medicos: DoctorAgenda[]
+}
+
+type DoctorAgenda = {
   id: number
   nome: string
   especialidade: string

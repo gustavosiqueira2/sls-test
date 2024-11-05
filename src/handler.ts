@@ -8,10 +8,10 @@ import AgendaController from '@entities/Agenda/AgendaController'
 import AgendamentoController from '@entities/Agendamento/AgendamentoController'
 import { AgendamentoDTO } from '@entities/Agendamento/AgendamentoDTO'
 
-export const getAgenda: APIGatewayProxyHandler = async () => {
+export const getAgendas: APIGatewayProxyHandler = async () => {
   const Agendamento = container.get<AgendaController>(AgendaController)
 
-  return await Agendamento.getAgenda()
+  return await Agendamento.getAgendas()
 }
 
 export const createAgendamento: APIGatewayProxyHandler = async (event) => {

@@ -1,9 +1,9 @@
 import { injectable } from 'inversify'
 
-import { Agenda } from './AgendaDTO'
+import { Agenda, AgendaServiceInterface } from './AgendaDTO'
 
 @injectable()
-export default class AgendaService {
+export default class AgendaService implements AgendaServiceInterface {
   private agenda: Agenda = {
     medicos: [
       {
@@ -25,7 +25,13 @@ export default class AgendaService {
     ]
   }
 
-  public async getAgenda() {
+  async getAgenda() {
     return this.agenda
+  }
+
+  async getDoctorAgenda(id: number) {
+    const agenda = this.agenda.medicos.find((agenda) => agenda.id === id)
+
+    return agenda
   }
 }
