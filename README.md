@@ -35,7 +35,7 @@ você pode me encontrar em:
   - PAYLOAD
   ```JSON
   {
-      "medico_id": 1,
+    "medico_id": 1,
     "paciente_nome": "Gustavo",
     "data_horario": "2024-10-05 10:00"
   }
