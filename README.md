@@ -28,6 +28,10 @@ você pode me encontrar em:
 
 ## 🛜 Rotas
 
+- rota padrão local `http://localhost:3000/dev/`
+  - exemplos
+    `http://localhost:3000/dev/agendas`
+    `http://localhost:3000/dev/agendamento`
 - Para receber a `lista de agenda` dos Médicos
   - GET /agendas
 - Para marcar um apontamento
@@ -41,7 +45,7 @@ você pode me encontrar em:
   }
   ```
 
-## 🛠️ Arquitetura, Estrutura e Afins
+## 🛠️ Estrutura
 
 Para este projeto foi escolhido está estrutura de pastas
 
@@ -60,10 +64,12 @@ src/
 |- handler.ts  <- entry point
 ```
 
-Configurações especificas do projeto
+## 🕵️ Arquitetura, Configurações especificas e afins
 
 - na pasta config encontrasse o arquivo de configuração da biblioteca `inversify` que foi usada para a arquitetura em DI
 - na pasta constants encontrasse um arquivo enum com o padrão escolhido para retornos HTTP baseado na convenção IANA
+- foi adicionado o husky para fazer verificações do ESLint e do Prettier antes do commit para garantir a estabilidade do código `npm run format` ira formatar os arquivos no padrão
+  - obs: foi adicionado um plugin para ordenação automática do importes baseada na configuração dos `paths` dentro de `tsconfig`
 - em middlewares se encontra o decorator `required` que foi criado para validação de campos obrigatórios no payload, utilização:
 
   ```typescript
