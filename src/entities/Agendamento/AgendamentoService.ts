@@ -8,6 +8,7 @@ export default class AgendamentoService {
 
   createAgendamento(agendamento: AgendamentoDTO): AgendamentoDTO {
     this.agendamentos.push(agendamento)
+
     return agendamento
   }
 }

@@ -15,7 +15,7 @@ export default class AgendaController {
       const agenda = await this.AgendaService.getAgenda()
 
       return {
-        statusCode: 201,
+        statusCode: 200,
         body: JSON.stringify(agenda)
       }
     } catch (error) {
