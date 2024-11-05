@@ -1,4 +1,4 @@
-export enum HTTP_STATUS_CODE {
+enum HTTP_STATUS_CODE {
   'Continue' = 100,
   'Switching Protocols' = 101,
   'Processing' = 102,
@@ -62,3 +62,5 @@ export enum HTTP_STATUS_CODE {
   'Not Extended' = 510,
   'Network Authentication Required' = 511
 }
+
+export default HTTP_STATUS_CODE

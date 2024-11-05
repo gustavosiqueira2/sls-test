@@ -1,7 +1,9 @@
 import { APIGatewayProxyResult } from 'aws-lambda'
 import { inject, injectable } from 'inversify'
-import { HTTP_STATUS_CODE } from 'src/constants/HTTP_STATUS_CODE'
-import responseJson from 'src/utils/responseJson'
+
+import HTTP_STATUS_CODE from '@constants/HTTP_STATUS_CODE'
+
+import responseJson from '@utils/responseJson'
 
 import AgendaService from '@entities/Agenda/AgendaService'
 

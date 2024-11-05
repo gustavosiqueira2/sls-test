@@ -1,12 +1,9 @@
 import { injectable } from 'inversify'
 
 import { AgendamentoDTO, AgendamentoServiceInterface } from './AgendamentoDTO'
-import AgendamentoMock from './AgendamentoMock'
 
 @injectable()
-export default class AgendamentoService implements AgendamentoServiceInterface {
-  private AgendamentoMock = new AgendamentoMock()
-
+export default class AgendamentoMock implements AgendamentoServiceInterface {
   getAvailableTime(
     horarios_disponiveis: string[],
     data_horario: string
@@ -17,6 +14,6 @@ export default class AgendamentoService implements AgendamentoServiceInterface {
   async createAgendamento(
     agendamento: AgendamentoDTO
   ): Promise<AgendamentoDTO> {
-    return this.AgendamentoMock.createAgendamento(agendamento)
+    return agendamento
   }
 }

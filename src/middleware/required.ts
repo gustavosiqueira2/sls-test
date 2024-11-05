@@ -1,5 +1,6 @@
-import { HTTP_STATUS_CODE } from 'src/constants/HTTP_STATUS_CODE'
-import responseJson from 'src/utils/responseJson'
+import HTTP_STATUS_CODE from '@constants/HTTP_STATUS_CODE'
+
+import responseJson from '@utils/responseJson'
 
 export function Required<T>(fields: (keyof T)[]) {
   return function (_: any, __: string, descriptor: PropertyDescriptor) {
